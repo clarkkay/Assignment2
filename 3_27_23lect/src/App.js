@@ -30,10 +30,6 @@ export const App = () => {
     setCartTotal(totalVal);
   };
 
-  function howManyofThis(id) {
-    let hmot = cart.filter((cartItem) => cartItem.id === id);
-    return hmot.length;
-  }
 
   const removeFromCart = (el) => {
     let hardCopy = [...cart];
@@ -41,7 +37,6 @@ export const App = () => {
     setCart(hardCopy);
   };
 
-  // var ProductsCategory = Products;
   const handleChange = (e) => {
     setQuery(e.target.value);
     console.log("Step 6 : in handleChange, Target Value :", e.target.value, " Query Value :", query);
@@ -52,15 +47,6 @@ export const App = () => {
     setProductsCategory(results);
   }
 
-
-  //   const results = ProductsCategory.filter((eachProduct) => {
-  //     if (e.target.value === "") return ProductsCategory;
-  //     return eachProduct.title
-  //       .toLowerCase()
-  //       .includes(e.target.value.toLowerCase());
-  //   });
-  //   setProductsCategory(results);
-  // };
 
   const render_products = (ProductsCategory) => {
     return (
@@ -174,9 +160,11 @@ export const App = () => {
                 {tag}
               </button>
             ))}
+            
           </div>
           <div className="py-10">
             <input type="search" value={query} onChange={handleChange} />
+            
           </div>
           <div className="py-10">
             <p className="mb-0 me-5 d-flex align-items-center">
