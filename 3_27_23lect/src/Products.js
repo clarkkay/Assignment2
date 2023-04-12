@@ -1,3 +1,16 @@
+import mac1 from "./mac1.jpg";
+import mac2 from "./mac2.jpg";
+import mac3 from "./mac3.jpg";
+import mac4 from "./mac4.jpg";
+import dell1 from "./dell1.jpg";
+import dell2 from "./dell2.jpg";
+import dell3 from "./dell3.jpg";
+import dell4 from "./dell4.jpg";
+import lenovo1 from "./lenovo1.jpg";
+import lenovo2 from "./lenovo2.jpg";
+import hp1 from "./hp1.jpg";
+import hp2 from "./hp2.jpg";
+
 export const Products = [
   {
     "id": 1,
@@ -5,7 +18,7 @@ export const Products = [
     "price": 537.00,
     "description": "Reborn electronics are like new — just better for the planet and your pocket. Our sellers are electronics experts who test and verify that every device is clean and 100% functional before it goes out for delivery. You get what it says on the box or your money back.",
     "category": "Apple",
-    "image": "../images/mac1.jpg",
+    "image": mac1,
     "rating": { "rate": 4.5, "count": 999 }
   },
   {
@@ -14,7 +27,7 @@ export const Products = [
     "price": 279.99,
     "description": "The amazing 15.4 inch Retina display of the Apple MacBook Pro A1398 notebook has a resolution of 2880 x 1800 pixels that offers the wide color gamut, fine contrast and sharp edges. You can perform your everyday tasks at lightning fast speeds as this Apple notebook features a 2 GHz quad-core i7 processor. Moreover, the 256 GB hard drive capacity of this MacBook allows you to store all your important data and media content.",
     "category": "Apple",
-    "image": "../images/mac2.png",
+    "image": mac2,
     "rating": { "rate": 2.7, "count": 101 }
   },
   {
@@ -23,7 +36,7 @@ export const Products = [
     "price": 799.99,
     "description": "Apple’s thinnest and lightest notebook gets supercharged with the Apple M1 chip. Tackle your projects with the blazing-fast 8-core CPU. Take graphics-intensive apps and games to the next level with the 7-core GPU. And accelerate machine learning tasks with the 16-core Neural Engine. All with a silent, fanless design and the longest battery life ever — up to 18 hours.¹ MacBook Air. Still perfectly portable. Just a lot more powerful.",
     "category": "Apple",
-    "image": "../images/mac3.png",
+    "image": mac3,
     "rating": { "rate": 4.8, "count": 559 }
   },
   {
@@ -32,7 +45,7 @@ export const Products = [
     "price": 365.00,
     "description": "A groundbreaking Retina display. All-flash architecture. The latest Intel processors. Remarkably thin and light design. Together, these features take the notebook to a place it's never been. And they'll do the same for everything you create with it.",
     "category": "Apple",
-    "image": "../images/mac4.png",
+    "image": mac4,
     "rating": { "rate": 3.8, "count": 430 }
   },
   {
@@ -41,7 +54,7 @@ export const Products = [
     "price": 849.99,
     "description": "From the moment you turn on your Inspiron, you’re greeted and connected to a whole new world. Whether it's social media, streaming movies, or finishing your work, Inspiron 14 2-in-1 laptop delivers what matters most to you, in style. Experience amazing visuals and audio in any mode. Features a 16:10 aspect ratio FHD+ display, Waves MaxxAudio Pro and the latest AMD Mobile Processors with Radeon Graphics",
     "category": "Dell",
-    "image": "../images/dell1.png",
+    "image": dell1,
     "rating": { "rate": 4.5, "count": 400 }
   },
   {
@@ -50,7 +63,7 @@ export const Products = [
     "price": 279.99,
     "description": "The Dell Latitude 7390 2-in-1 Touchscreen Laptop is a powerful machine that is fully capable of any task. This features an 8th generation core i7 and two Thunderbolt 3 USB C ports of all your adapters. Dell's redesigned latitude entry into 2-in-1 is an all-around improvement in design, features and performance, making it one of the best in the category. The included NVMe PCIe SSD allows for superior speeds and fast booting to your essential programs.",
     "category": "Dell",
-    "image": "../images/dell2.png",
+    "image": dell2,
     "rating": { "rate": 3.9, "count": 70 }
   },
   {
@@ -59,7 +72,7 @@ export const Products = [
     "price": 550.00,
     "description": "This laptop was made to work! The Dell Precision 3520 Ultrabook Workstation takes on serious architecture, graphics, scientific, and engineering tasks with ease. It's powerful enough to emulate desktop performance and portable enough to be taken anywhere.",
     "category": "Dell",
-    "image": "../images/dell3.png",
+    "image": dell3,
     "rating": { "rate": 3, "count": 400 }
   },
   {
@@ -68,7 +81,7 @@ export const Products = [
     "price": 1391.99,
     "description": "Work confidently from anywhere on the world's smallest and lightest 15 inch premium commercial laptop. More premium choices provide an amazing screen experience, intelligent performance, built-in security, and privacy.",
     "category": "Dell",
-    "image": "../images/dell4.png",
+    "image": dell4,
     "rating": { "rate": 4.3, "count": 907 }
   },
   {
@@ -77,7 +90,7 @@ export const Products = [
     "price": 1049.99,
     "description": "Whether it’s a touchscreen you prefer or a traditional display, the ThinkPad T14s Gen 2 laptop gives you a number of 14 inch screen choices based on your needs—and all options include thin bezels that enhance the display. Choose the low-power FHD panel for ultimate battery life, or go with the FHD wide-angle touchscreen. For refined details, increased brightness, and amazingly accurate colors, dramatic Dolby Vision™ IPS high-dynamic-range (HDR) technology is available on the 4K display.",
     "category": "Lenovo",
-    "image": "../images/lenovo1.png",
+    "image": lenovo1,
     "rating": { "rate": 3.3, "count": 203 }
   },
   {
@@ -86,7 +99,7 @@ export const Products = [
     "price": 539.99,
     "description": "AMD Ryzen™ 7 U Series Mobile Processors give the performance you need for content creation and productivity. 8GB LPDDR4x memory and 512GB PCle SSD storage offer faster read and write speeds, with storage for all of your files. Intelligent Cooling ensures cool temps and quiet fan noise; balance your sessions to optimize battery life or bolster performance with Lenovo's AI technology.",
     "category": "Lenovo",
-    "image": "../images/lenovo2.png",
+    "image": lenovo2,
     "rating": { "rate": 2.9, "count": 470 }
   },
   {
@@ -95,7 +108,7 @@ export const Products = [
     "price": 899.99,
     "description": "Multitasking speed powered by 12th Gen Intel® Core™ i5/i7 processors built on the Intel® Evo™ platform, with Windows 11 and a vibrant touchscreen. Sleek and beautiful, in your choice of size.¹ And battery life² for real life to do your thing your way all day. Surface Laptop 5 gives you the perfect balance to do it all.",
     "category": "HP",
-    "image": "../images/hp1.png",
+    "image": hp1,
     "rating": { "rate": 4.8, "count": 319 }
   },
   {
@@ -104,7 +117,7 @@ export const Products = [
     "price": 242.78,
     "description": "HP Elitebook 840 G3 Laptop Intel i5-6600U 2.6GHz, 8GB RAM, 512GB SSD, Windows 10 Pro",
     "category": "HP",
-    "image": "../images/hp2.png",
+    "image": hp2,
     "rating": { "rate": 4.8, "count": 400 }
   }
 ]
