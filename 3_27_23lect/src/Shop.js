@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Products } from "./Products";
+import shopCart from "./shopping-cart.png";
 
 const Shop = () => {
   const [cart, setCart] = useState([]);
@@ -67,8 +68,16 @@ const Shop = () => {
           {howManyofThis(el.id)}
         </div>
       </div>
+      <script type="text/javascript" src="script.js"></script>
+    </div>
+  ));
 
-      <div class="container">
+  const cart_view = (
+    <div>
+    {Show_cart}
+    <br></br>
+    <br></br>
+    <div class="container">
         <div class="row">
           <div class="col-2"></div>
 
@@ -201,10 +210,12 @@ const Shop = () => {
           <div class="col-2"></div>
         </div>
       </div>
+      <br></br>
+      <br></br>
 
-      <script type="text/javascript" src="script.js"></script>
     </div>
-  ));
+  );
+
 
   const cartItems = cart.map((el) => (
     <div key={el.id}>
@@ -296,7 +307,7 @@ const Shop = () => {
                   <h4>
                     <b>319 Shopping Cart</b>
                   </h4>
-                  <button type="button" onClick={() => handleShowCart()}><img src="./shopping-cart.png" alt="Shopping Cart" width={50} height={50} /></button>
+                  <button type="button" onClick={() => handleShowCart()}><img src={shopCart} alt="Shopping Cart" width={50} height={50} /></button>
                 </div>
                 <div className="py-10">
                     <input type="search" value={query} onChange={handleChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
@@ -317,7 +328,7 @@ dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
               <span class="lead fw-normal">${cartTotal}</span>
             </p>
           </div>
-          {!showMore && <div>{Show_cart}</div>}
+          {!showMore && <div>{cart_view}</div>}
         </div>
       </div>
     </div>
