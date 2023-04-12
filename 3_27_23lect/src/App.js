@@ -65,7 +65,7 @@ export const App = () => {
             <div key={index} className="group relative shadow-lg">
               <div className=" min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-60 lg:aspect-none">
                 <img
-                  alt="Product Image"
+                  alt="Product"
                   src={product.image}
                   className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                 />
