@@ -44,20 +44,23 @@ export const App = () => {
   // var ProductsCategory = Products;
   const handleChange = (e) => {
     setQuery(e.target.value);
-    console.log(
-      "Step 6 : in handleChange, Target Value :",
-      e.target.value,
-      " Query Value :",
-      query
-    );
-    const results = ProductsCategory.filter((eachProduct) => {
+    console.log("Step 6 : in handleChange, Target Value :", e.target.value, " Query Value :", query);
+    const results = ProductsCategory.filter(eachProduct => {
       if (e.target.value === "") return ProductsCategory;
-      return eachProduct.title
-        .toLowerCase()
-        .includes(e.target.value.toLowerCase());
+      return eachProduct.title.toLowerCase().includes(e.target.value.toLowerCase())
     });
     setProductsCategory(results);
-  };
+  }
+
+
+  //   const results = ProductsCategory.filter((eachProduct) => {
+  //     if (e.target.value === "") return ProductsCategory;
+  //     return eachProduct.title
+  //       .toLowerCase()
+  //       .includes(e.target.value.toLowerCase());
+  //   });
+  //   setProductsCategory(results);
+  // };
 
   const render_products = (ProductsCategory) => {
     return (
@@ -173,15 +176,7 @@ export const App = () => {
             ))}
           </div>
           <div className="py-10">
-            <input
-              type="search"
-              value={query}
-              onChange={handleChange}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
-focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
-dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
-dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            />
+            <input type="search" value={query} onChange={handleChange} />
           </div>
           <div className="py-10">
             <p className="mb-0 me-5 d-flex align-items-center">
@@ -190,7 +185,7 @@ dark:focus:ring-blue-500 dark:focus:border-blue-500"
             </p>
           </div>
           <div className="py-10">
-            <button type="button" onClick={() =>console.log("Checkout!")}>
+            <button type="button" onClick={() => console.log("Checkout!")}>
               <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.favpng.com%2F1%2F0%2F19%2Fshopping-cart-logo-grocery-store-png-favpng-Ch95Hxwf72xDpPbZbmv87T8m8.jpg&f=1&nofb=1&ipt=785acab61c747a5cc52507083b1e0b39be233e8598122af38d0ea3185d686bac&ipo=images" alt="Checkout" width="250" height="250">
               </img>
             </button>

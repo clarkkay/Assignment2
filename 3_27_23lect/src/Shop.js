@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 import items from "./products.json";
+import { Products } from "./Products";
+import { Categories } from "./Categories";
+
 
 const Shop = () => {
   const [cart, setCart] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
+  const [ProductsCategory, setProductsCategory] = useState(Products);
+  const [query, setQuery] = useState("");
 
   const addToCart = (el) => {
     setCart([...cart, el]);
@@ -72,12 +77,31 @@ const Shop = () => {
       {el.title}${el.price}
     </div>
   ));
+  const handleChange = (e) => {
+    setQuery(e.target.value);
+    console.log("Step 6 : in handleChange, Target Value :", e.target.value, " Query Value :", query);
+    const results = ProductsCategory.filter(eachProduct => {
+      if (e.target.value === "") return ProductsCategory;
+      return eachProduct.title.toLowerCase().includes(e.target.value.toLowerCase())
+    });
+    setProductsCategory(results);
+  
+   function handleClick(tag) {
+    console.log("Step 4 : in handleClick", tag);
+    let filtered = Products.filter((cat) => cat.category === tag);
+    setProductsCategory(filtered);
+    // ProductsCategory = filtered;
+    console.log("Step 5 : ", Products.length, ProductsCategory.length);
+  }
+  
+  }
+ 
 
   return (
     <div>
       STORE SE/ComS319
       <div class="card">
-        <div class="row"> {cartTotal}</div> {/* HERE, IT IS THE SHOPING CART */}
+        <div class="row align-self-center text-right text-muted"> {cartTotal}</div> {/* HERE, IT IS THE SHOPING CART */}
         <div class="col-md-8 cart">
           <div class="title">
             <div class="row">
@@ -86,6 +110,10 @@ const Shop = () => {
                 <h4>
                   <b>319 Shopping Cart</b>
                 </h4>{" "}
+              </div>
+
+              <div className="py-10">
+                <input type="search" value={query} onChange={handleChange} />
               </div>
               <div class="col align-self-center text-right text-muted">
                 {" "}
