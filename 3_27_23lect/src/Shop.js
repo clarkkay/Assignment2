@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ReactDOM } from "react";
 import { Products } from "./Products";
 import shopCart from "./shopping-cart.png";
 
@@ -9,10 +9,12 @@ const Shop = () => {
   const [query, setQuery] = useState("");
   const [showMore, setShowMore] = useState(true);
   const [confirmationView, setConfirmationView] = useState(false);
+  let flag = 1;
 
   const addToCart = (el) => {
     setCart([...cart, el]);
   };
+  
 
   const removeFromCart = (el) => {
     let hardCopy = [...cart];
@@ -143,6 +145,7 @@ const Shop = () => {
                     placeholder="XXXX-XXXX-XXXX-XXXX"
                     aria-label="Username"
                     aria-describedby="basic-addon1"
+                    
                   />
 
                   <div className="valid-feedback">Looks good!</div>
@@ -161,6 +164,7 @@ const Shop = () => {
                   className="form-control"
                   id="inputAddress"
                   placeholder="1234 Main St"
+                  
                 />
               </div>
               <div className="col-12">
@@ -172,6 +176,7 @@ const Shop = () => {
                   className="form-control"
                   id="inputAddress2"
                   placeholder="Apartment, studio, or floor"
+                  
                 />
               </div>
               <div className="col-md-6">
@@ -185,7 +190,7 @@ const Shop = () => {
                   State
                 </label>
                 <select id="inputState" className="form-select">
-                  <option selected>Choose...</option>
+                  <option  selected>Choose...</option><option>IL</option><option>AL</option><option>OK</option><option>IA</option><option>FL</option>
                 </select>
               </div>
               <div className="col-md-2">
@@ -335,6 +340,11 @@ const Shop = () => {
       <ul className="list-group list-group-flush">
         {final_products}
       </ul>
+      <br></br>
+      <div>
+        <h3 className="card-text">User Information</h3>
+        <p>Melani Hodge<br></br>me@gmail.com<br></br>1234 Main St<br></br>XXXX-XXXX-XXXX-7777<br></br></p>
+      </div>
       <button type="button" className="btn btn-secondary" onClick={()=>handleBackToPage()}>
         <i className="bi-arrow-left-circle"> Return</i>
       </button>
@@ -349,13 +359,13 @@ const Shop = () => {
   return (
     <div>
       STORE SE/ComS319
-      <div className="card">
-        <div className="row">
+      <div class="card">
+        <div class="row">
           {/* HERE, IT IS THE SHOPING CART */}
-          <div className="col-md-8 cart">
-            <div className="title">
-              <div className="row">
-                <div className="col">
+          <div class="col-md-8 cart">
+            <div class="title">
+              <div class="row">
+                <div class="col">
                   <h4>
                     <b>319 Shopping Cart</b>
                   </h4>
@@ -367,17 +377,17 @@ focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
 dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
                   </div>
-                <div className="col align-self-center text-right text-muted">
+                <div class="col align-self-center text-right text-muted">
                   Products selected {cart.length}
                 </div>
               </div>
             </div>
             {showMore && !confirmationView && <div>{render_products(ProductsCategory)}</div>}
           </div>
-          <div className="float-end">
-            <p className="mb-0 me-5 d-flex align-items-center">
-              <span className="small text-muted me-2">Order total:</span>
-              <span className="lead fw-normal">${cartTotal}</span>
+          <div class="float-end">
+            <p class="mb-0 me-5 d-flex align-items-center">
+              <span class="small text-muted me-2">Order total:</span>
+              <span class="lead fw-normal">${cartTotal}</span>
             </p>
           </div>
           {!showMore && <div>{cart_view}</div>}
@@ -385,7 +395,7 @@ dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
         </div>
       </div>
     </div>
-  );
+    );
 };
 
 export default Shop;
