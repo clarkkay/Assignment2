@@ -8,6 +8,7 @@ const Shop = () => {
   const [ProductsCategory, setProductsCategory] = useState(Products);
   const [query, setQuery] = useState("");
   const [showMore, setShowMore] = useState(true);
+  const [confirmationView, setConfirmationView] = useState(false);
 
   const addToCart = (el) => {
     setCart([...cart, el]);
@@ -36,20 +37,18 @@ const Shop = () => {
     return hmot.length;
   }
 
-  
-
   const Show_cart = cart.map((el) => (
     // PRODUCT
-    <div class="row border-top border-bottom" key={el.id}>
-      <div class="row main align-items-center">
-        <div class="col-2">
-          <img class="img-fluid" alt="img" src={el.image} />
+    <div className="row border-top border-bottom" key={el.id}>
+      <div className="row main align-items-center">
+        <div className="col-2">
+          <img className="img-fluid" alt="img" src={el.image} />
         </div>
-        <div class="col">
-          <div class="row text-muted">{el.title}</div>
-          <div class="row">{el.category}</div>
+        <div className="col">
+          <div className="row text-muted">{el.title}</div>
+          <div className="row">{el.category}</div>
         </div>
-        <div class="col">
+        <div className="col">
           <button
             type="button"
             variant="light"
@@ -63,8 +62,28 @@ const Shop = () => {
             +{" "}
           </button>
         </div>
-        <div class="col">
-          ${el.price} <span class="close">&#10005;</span>
+        <div className="col">
+          ${el.price} <span className="close">&#10005;</span>
+          {howManyofThis(el.id)}
+        </div>
+      </div>
+      <script type="text/javascript" src="script.js"></script>
+    </div>
+  ));
+
+  const final_products = cart.map((el) => (
+    // PRODUCT
+    <div className="row border-top border-bottom" key={el.id}>
+      <div className="row main align-items-center">
+        <div className="col-2">
+          <img className="img-fluid" alt="img" src={el.image} />
+        </div>
+        <div className="col">
+          <div className="row text-muted">{el.title}</div>
+          <div className="row">{el.category}</div>
+        </div>
+        <div className="col">
+          ${el.price} <span className="close">&#10005;</span>
           {howManyofThis(el.id)}
         </div>
       </div>
@@ -77,137 +96,126 @@ const Shop = () => {
     {Show_cart}
     <br></br>
     <br></br>
-    <div class="container">
-        <div class="row">
-          <div class="col-2"></div>
+    <div className="container">
+        <div className="row">
+          <div className="col-2"></div>
 
-          <div class="col-8">
+          <div className="col-8">
             <h1>Javascript Form Validation</h1>
 
             <div id="liveAlertPlaceholder"></div>
 
-            <form class="row g-3" id="checkout-form">
+            <form className="row g-3" id="checkout-form">
               {/* Full Name */}
-              <div class="col-md-6">
-                <label for="inputName" class="form-label">
+              <div className="col-md-6">
+                <label htmlFor="inputName" className="form-label">
                   Full Name
                 </label>
-                <input type="text" class="form-control" id="inputName" />
-                <div class="valid-feedback">Looks good!</div>
-                <div class="invalid-feedback">Must be like, "John Doe"</div>
+                <input type="text" className="form-control" id="inputName" />
+                <div className="valid-feedback">Looks good!</div>
+                <div className="invalid-feedback">Must be like, "John Doe"</div>
               </div>
 
               {/* Email */}
-              <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">
+              <div className="col-md-6">
+                <label htmlFor="inputEmail4" className="form-label">
                   Email
                 </label>
-                <input type="email" class="form-control" id="inputEmail4" />
-                <div class="valid-feedback">Looks good!</div>
-                <div class="invalid-feedback">Must be like, "abc@xyz.efg"</div>
+                <input type="email" className="form-control" id="inputEmail4" />
+                <div className="valid-feedback">Looks good!</div>
+                <div className="invalid-feedback">Must be like, "abc@xyz.efg"</div>
               </div>
 
               {/* Credit Card */}
-              <div class="col-12">
-                <label for="inputCard" class="form-label">
+              <div className="col-12">
+                <label htmlFor="inputCard" className="form-label">
                   Card
                 </label>
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1">
-                    <i class="bi-credit-card-fill"></i>
+                <div className="input-group mb-3">
+                  <span className="input-group-text" id="basic-addon1">
+                    <i className="bi-credit-card-fill"></i>
                   </span>
 
                   <input
                     type="text"
                     id="inputCard"
-                    class="form-control"
+                    className="form-control"
                     placeholder="XXXX-XXXX-XXXX-XXXX"
                     aria-label="Username"
                     aria-describedby="basic-addon1"
                   />
 
-                  <div class="valid-feedback">Looks good!</div>
-                  <div class="invalid-feedback">
+                  <div className="valid-feedback">Looks good!</div>
+                  <div className="invalid-feedback">
                     Must be like, "7777-7777-7777-7777"
                   </div>
                 </div>
               </div>
 
-              <div class="col-12">
-                <label for="inputAddress" class="form-label">
+              <div className="col-12">
+                <label htmlFor="inputAddress" className="form-label">
                   Address
                 </label>
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="inputAddress"
                   placeholder="1234 Main St"
                 />
               </div>
-              <div class="col-12">
-                <label for="inputAddress2" class="form-label">
+              <div className="col-12">
+                <label htmlFor="inputAddress2" className="form-label">
                   Address 2
                 </label>
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="inputAddress2"
                   placeholder="Apartment, studio, or floor"
                 />
               </div>
-              <div class="col-md-6">
-                <label for="inputCity" class="form-label">
+              <div className="col-md-6">
+                <label htmlFor="inputCity" className="form-label">
                   City
                 </label>
-                <input type="text" class="form-control" id="inputCity" />
+                <input type="text" className="form-control" id="inputCity" />
               </div>
-              <div class="col-md-4">
-                <label for="inputState" class="form-label">
+              <div className="col-md-4">
+                <label htmlFor="inputState" className="form-label">
                   State
                 </label>
-                <select id="inputState" class="form-select">
+                <select id="inputState" className="form-select">
                   <option selected>Choose...</option>
                 </select>
               </div>
-              <div class="col-md-2">
-                <label for="inputZip" class="form-label">
+              <div className="col-md-2">
+                <label htmlFor="inputZip" className="form-label">
                   Zip
                 </label>
-                <input type="text" class="form-control" id="inputZip" />
+                <input type="text" className="form-control" id="inputZip" />
               </div>
-              <div class="col-12">
-                <div class="form-check">
+              <div className="col-12">
+                <div className="form-check">
                   <input
-                    class="form-check-input"
+                    className="form-check-input"
                     type="checkbox"
                     id="gridCheck"
                   />
-                  <label class="form-check-label" for="gridCheck">
+                  <label className="form-check-label" htmlFor="gridCheck">
                     Check me out
                   </label>
                 </div>
               </div>
-              <div class="col-12">
-                <button type="submit" class="btn btn-success">
+              <div className="col-12">
+                <button type="button" className="btn btn-success" onClick={() => {handleShowConfirmation(); handleShowCart()}}>
                   {" "}
-                  <i class="bi-bag-check"></i> Order
+                  <i className="bi-bag-check"></i> Order
                 </button>
               </div>
             </form>
-            {/* ORDER SUMMARY */}
-            <div class="card collapse" style={{ width: "18rem" }}>
-              <div class="card-body">
-                <h5 class="card-title">Order summary</h5>
-                <p class="card-text">Here is a summary of your order.</p>
-              </div>
-              <ul class="list-group list-group-flush"></ul>
-              <button type="button" class="btn btn-secondary">
-                <i class="bi-arrow-left-circle"> Return</i>
-              </button>
-            </div>
           </div>
 
-          <div class="col-2"></div>
+          <div className="col-2"></div>
         </div>
       </div>
       <br></br>
@@ -219,7 +227,7 @@ const Shop = () => {
 
   const cartItems = cart.map((el) => (
     <div key={el.id}>
-      <img class="img-fluid" src={el.image} width={30} />
+      <img className="img-fluid" src={el.image} width={30} />
       {el.title}${el.price}
     </div>
   ));
@@ -285,25 +293,69 @@ const Shop = () => {
               </div>
             </div>
           ))}
+          <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         </div>
       </div>
     );
   };
+
+
+  function handleShowConfirmation() {
+    setConfirmationView(!confirmationView);
+  }
   
   function handleShowCart() {
     setShowMore(!showMore);
   }
 
+  function handleBackToPage() {
+    setConfirmationView(!confirmationView);
+    setShowMore(showMore);
+    setCart([]);
+  }
+
+  const confirmation_view = (
+        <div className="row" width="1vw">
+          <div className="col-2"></div>
+    <div className="card" style={{ width: "50rem" }}>
+      <div className="card-body">
+        <h5 className="card-title">Order summary</h5>
+        <p className="card-text">Here is a summary of your order.</p>
+      </div>
+      <ul className="list-group list-group-flush">
+        {final_products}
+      </ul>
+      <button type="button" className="btn btn-secondary" onClick={()=>handleBackToPage()}>
+        <i className="bi-arrow-left-circle"> Return</i>
+      </button>
+    </div>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    </div>
+  );
+
   return (
     <div>
       STORE SE/ComS319
-      <div class="card">
-        <div class="row">
+      <div className="card">
+        <div className="row">
           {/* HERE, IT IS THE SHOPING CART */}
-          <div class="col-md-8 cart">
-            <div class="title">
-              <div class="row">
-                <div class="col">
+          <div className="col-md-8 cart">
+            <div className="title">
+              <div className="row">
+                <div className="col">
                   <h4>
                     <b>319 Shopping Cart</b>
                   </h4>
@@ -315,20 +367,21 @@ focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
 dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
                   </div>
-                <div class="col align-self-center text-right text-muted">
+                <div className="col align-self-center text-right text-muted">
                   Products selected {cart.length}
                 </div>
               </div>
             </div>
-            {showMore && <div>{render_products(ProductsCategory)}</div>}
+            {showMore && !confirmationView && <div>{render_products(ProductsCategory)}</div>}
           </div>
-          <div class="float-end">
-            <p class="mb-0 me-5 d-flex align-items-center">
-              <span class="small text-muted me-2">Order total:</span>
-              <span class="lead fw-normal">${cartTotal}</span>
+          <div className="float-end">
+            <p className="mb-0 me-5 d-flex align-items-center">
+              <span className="small text-muted me-2">Order total:</span>
+              <span className="lead fw-normal">${cartTotal}</span>
             </p>
           </div>
           {!showMore && <div>{cart_view}</div>}
+          {confirmationView && <div>{confirmation_view}</div>}
         </div>
       </div>
     </div>
